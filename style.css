@@ -1,0 +1,78 @@
+.screen {
+  margin: 5em auto 0 auto;
+  border: 3px solid black;
+  width: 29.5em;
+  height: 5em;
+  border-radius: 10px;
+  text-align: right; 
+    
+}
+
+.screen p{
+  margin: 0.4em 1em;
+  font-size: 2.5em
+}
+
+.allclear {
+  background-color: rgba(79, 63, 224, 0.418);
+  border-radius: 15px;
+  font-size: 2em;
+}
+
+.clearentry {
+  background-color: rgba(79, 63, 224, 0.418);
+  border-radius: 15px;
+  font-size: 2em;
+}
+
+.tothepower {
+  background-color: rgba(79, 63, 224, 0.418);
+  border-radius: 15px;
+  font-size: 2em;
+}
+
+.squareroot {
+  background-color: rgba(79, 63, 224, 0.418);
+  border-radius: 15px;
+  font-size: 2em;
+
+}
+.number {
+  background-color: rgb(93, 93, 243);
+  border-radius: 15px;
+  font-size: 2em;
+}
+
+.operator {
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+  font-size: 2em
+}
+
+.decimal {
+  background-color: rgba(37, 158, 67, 0.74);
+  border-radius: 15px;
+  font-size:2em;
+  font-weight: bold;
+   
+}
+
+.equals {
+  background-color: rgba(37, 158, 67, 0.74);
+  border-radius: 15px;
+  font-size: 2em;
+}
+
+
+.buttons {
+  width: 30em;
+  height: 30em;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat (5, 1fr);
+  grid-gap: 0.2em;
+  box-shadow: 20px 20px 20px #888888 ;
+  
+}
