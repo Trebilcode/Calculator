@@ -30,6 +30,7 @@ function storeNumbers () {
       
 
   }
+  
 
 
 
@@ -68,6 +69,7 @@ function equals () {
       
       divide(result, num1)
       
+      
     } else if(operationsObject.sum) {
       sum(result, num1)
     } else if (operationsObject.multiply) {
@@ -81,6 +83,7 @@ equals();
 function divide (result, num1) {
   result2 = Number(result) / Number(num1);
   screenContent.innerHTML = result2;
+  
 }
 function multiply (result, num1) {
   result2 = Number(result) * Number(num1);
@@ -104,7 +107,9 @@ function subtract (result, num1) {
        operationsObject.divide = true;
        screenContent.innerHTML = '';
        result = num1;
-       num1 = '';
+       
+       
+       
        
        
        
