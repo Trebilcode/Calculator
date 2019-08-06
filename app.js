@@ -10,6 +10,7 @@ let buttons = document.getElementsByClassName('number');
 let operators = document.getElementsByClassName('operator');
 let clearEntry = document.querySelector('.clearentry');
 let equal = document.querySelector('.equals');
+let decimalPoint = document.querySelector('.decimal');
 let num1;
 let result;
 let result2;
@@ -44,6 +45,18 @@ function restrictNumbersOnScreen() {
   if (screenContent.innerHTML.length > 8) {
       screenContent.innerHTML = 'ERROR      ';
   }
+}
+
+function addDecimalPoint () {
+  decimalPoint.addEventListener('click', function () {
+    if (!screenContent.innerHTML.includes('.')) {
+    screenContent.innerHTML = screenContent.innerHTML + '.';
+    }else {
+      
+      return
+
+    }
+  });
 }
 
 function divide (result, num1) {
@@ -142,3 +155,4 @@ equals();
 clearE();
 showNumbersOnScreen();
 operate();
+addDecimalPoint();
