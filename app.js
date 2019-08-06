@@ -2,9 +2,17 @@ let screenContent = document.getElementById('screenContent');
 let buttons = document.getElementsByClassName('number');
 let operators = document.getElementsByClassName('operator');
 let clearEntry = document.querySelector('.clearentry');
+let equal = document.querySelector('.equals');
 let num1;
 let result;
-let waitingForSecondOperand = false;
+let result2;
+let operationsObject = {
+  divide : false,
+  multiply : false,
+  sum : false,
+  subtract : false
+}
+
 
 function clearE() {
  clearEntry.addEventListener('click', function() {
@@ -12,24 +20,18 @@ function clearE() {
  });
 }
 
-function wipeScreen() {
-  screenContent.innerHTML = '';
-}
+
 
 function storeNumbers () {
   
-  if (screenContent.innerHTML !== '0' && screenContent.innerHTML !== 'ERROR      ' && !waitingForSecondOperand){
+  if (screenContent.innerHTML !== '0' && screenContent.innerHTML !== 'ERROR      '){
     num1 = screenContent.innerHTML;
     console.log(num1)
       
-  }else {
-      
-    result = num1;
-    wipeScreen();
-    num1 = '';    
-    console.log(result)
-    console.log(num1)
+
   }
+
+
 
 
 }
@@ -60,30 +62,81 @@ function restrictNumbersOnScreen() {
     screenContent.innerHTML = 'ERROR      ';
   }
 }
-
+function equals () {
+  equal.addEventListener('click', function () {
+    if (operationsObject.divide) {
+      
+      divide(result, num1)
+      
+    } else if(operationsObject.sum) {
+      sum(result, num1)
+    } else if (operationsObject.multiply) {
+      multiply(result, num1)
+    } else if(operationsObject.subtract) {
+      subtract(result, num1)
+    }
+  })
+}
+equals();
+function divide (result, num1) {
+  result2 = Number(result) / Number(num1);
+  screenContent.innerHTML = result2;
+}
+function multiply (result, num1) {
+  result2 = Number(result) * Number(num1);
+  screenContent.innerHTML = result2;
+}
+function sum (result, num1) {
+  result2 = Number(result) + Number(num1);
+  screenContent.innerHTML = result2;
+}
+function subtract (result, num1) {
+  result2 = Number(result) - Number(num1);
+  screenContent.innerHTML = result2;
+}
  function operate() {
     for(let i= 0; i < operators.length; i++) {
       operators[i].addEventListener('click', function(){
        switch (operators[i].value) {
        
        case '/':
-       console.log('division');
-       waitingForSecondOperand = true;
+       
+       operationsObject.divide = true;
+       screenContent.innerHTML = '';
+       result = num1;
+       num1 = '';
+       
+       
+       
+       console.log(result + 'result');
+       console.log(num1 + 'num1')
+       
        break;
 
        case 'x':
-       console.log('multiply');
-       waitingForSecondOperand = true;
+           operationsObject.multiply = true;
+           screenContent.innerHTML = '';
+           result = num1;
+           num1 = '';
+           console.log(result + 'result');
+           console.log(num1 + 'num1')
+       
        break;
        
        case '+':
-       console.log('sum');
-       waitingForSecondOperand = true;
+           operationsObject.sum = true;
+           screenContent.innerHTML = '';
+           result = num1;
+           num1 = '';
+       
        break;
 
        case '-':
-       console.log('subtract');
-       waitingForSecondOperand = true;
+           operationsObject.subtract = true;
+           screenContent.innerHTML = '';
+           result = num1;
+           num1 = '';
+       
        break;
        }
       
