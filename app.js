@@ -82,6 +82,7 @@ function sum (result, num1) {
 function clearE() {
  clearEntry.addEventListener('click', function() {
   screenContent.innerHTML = '0';
+  num1 = '';
  });
 }
 
