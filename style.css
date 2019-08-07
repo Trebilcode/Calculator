@@ -1,3 +1,6 @@
+body {
+  background-color: #301a1b;
+}
 .container {
   background-color: #343633;
   border: 10px solid rgba(63, 61, 61, 0.212);
@@ -17,8 +20,14 @@
 }
 
 .screen p{
+  font-family: 'Orbitron', sans-serif;
   margin: 0.4em 1em;
-  font-size: 2.5em
+  font-size: 2.5em;
+  color: black;
+}
+
+p {
+  color: white;
 }
 
 .allclear {
@@ -50,16 +59,16 @@
 
 }
 .number {
-  background-color: rgba(160, 45, 116, 0.822);
+  background-color: rgba(15, 15, 15, 0.822);
   color: white;
   border-radius: 15px;
   font-size: 2em;
 }
 
 .operator {
-  background-color: #010400;
+  background-color: rgba(252, 250, 250, 0.973);
   border-radius: 15px;
-  color: white;
+  color: black;
   font-size: 2em
 }
 
@@ -81,14 +90,14 @@
 
 
 .buttons {
+  
   width: 30em;
   height: 30em;
   margin: 1em auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat (5, 1fr);
-  grid-gap: 0.2em;
-  
+  grid-gap: 0.2em;  
   transition: all .5s ease-in-out;
   
   
@@ -100,4 +109,12 @@
 
 .buttons > button:hover {
   transform: scale(1.1);
+}
+
+button {
+  font-family: 'Orbitron', sans-serif;
+}
+
+footer {
+  margin-top: -1.5em;
 }
