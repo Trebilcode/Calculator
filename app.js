@@ -5,12 +5,14 @@ let operatorsObject = {
   subtract: false
 
 }
+
 let screenContent = document.getElementById('screenContent');
 let buttons = document.getElementsByClassName('number');
 let operators = document.getElementsByClassName('operator');
 let clearEntry = document.querySelector('.clearentry');
 let equal = document.querySelector('.equals');
 let decimalPoint = document.querySelector('.decimal');
+
 let num1;
 let result;
 let result2;
@@ -86,40 +88,48 @@ function clearE() {
  });
 }
 
-
- let operate = function () {
+let operate = function () {
     for(let i= 0; i < operators.length; i++) {
       operators[i].addEventListener('click', function(){
        switch (operators[i].value) {
        
-       case '/':       
-        operatorsObject.divide = true;       
-        result = num1;
-        num1 = '';
-        screenContent.innerHTML = '';        
+       case '/':        
+        operatorsObject.divide = true;
+        if (num1) {
+          result = num1;
+          num1 = '';
+          screenContent.innerHTML = '';
+        }       
+
        break;
 
-       case 'x':           
+       case 'x':             
         operatorsObject.multiply = true;
-        result = num1;
-        num1 = ''
-        screenContent.innerHTML = ''
+        if (num1) {
+          result = num1;
+          num1 = '';
+          screenContent.innerHTML = '';
+        }
              
        break;
        
-       case '+':           
+       case '+':        
         operatorsObject.sum = true;
-        result = num1;
-        num1 = '';
-        screenContent.innerHTML = '';           
+        if (num1) {
+          result = num1;
+          num1 = '';
+          screenContent.innerHTML = '';
+        }           
        
        break;
 
-       case '-':
+       case '-':        
         operatorsObject.subtract = true;
-        result = num1;
-        num1 = '';
-        screenContent.innerHTML = '';      
+        if (num1) {
+          result = num1;
+          num1 = '';
+          screenContent.innerHTML = '';
+        }      
        
        break;
        }     
