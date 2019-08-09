@@ -24,21 +24,28 @@ function showNumbersOnScreen() {
     buttons[i].addEventListener('click', function () {
       if (screenContent.innerHTML === '0') {
         screenContent.innerHTML = buttons[i].innerHTML;
-
+        
+        
 
       } else {
         screenContent.innerHTML += buttons[i].innerHTML;
-        storeNumbers();
+        storeNumbers()
         restrictNumbersOnScreen();
       }
+      if (!num1) {
+        num1 = screenContent.innerHTML;
+      }
     });
+    
   }
+  
 }
 
 function storeNumbers() {
 
   if (screenContent.innerHTML !== '0' && screenContent.innerHTML !== 'ERROR      ') {
     num1 = screenContent.innerHTML;
+    console.log(num1)
   }
 }
 
@@ -46,13 +53,13 @@ function restrictNumbersOnScreen() {
 
   if (screenContent.innerHTML.length > 8) {
       screenContent.innerHTML = 'ERROR      ';
-  }
+  } 
 }
 
 function addDecimalPoint () {
   decimalPoint.addEventListener('click', function () {
     if (!screenContent.innerHTML.includes('.')) {
-    screenContent.innerHTML = screenContent.innerHTML + '.';
+    screenContent.innerHTML += '.';
     }else {
       
       return
@@ -62,8 +69,13 @@ function addDecimalPoint () {
 }
 
 function divide (result, num1) {
+  
   result2 = Number(result) / Number(num1);
-  screenContent.innerHTML = result2;  
+  if(result2 !== Infinity) {
+  screenContent.innerHTML = result2;
+  } else {
+    screenContent.innerHTML = 'ERROR'
+  }  
 }
 
 function subtract (result, num1) {
@@ -95,11 +107,16 @@ let operate = function () {
        
        case '/':        
         operatorsObject.divide = true;
-        if (num1) {
+          if (num1) {
+          
           result = num1;
+           console.log(num1)
+           console.log(result)
+
           num1 = '';
           screenContent.innerHTML = '';
-        }       
+          
+          }
 
        break;
 
