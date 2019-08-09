@@ -10,9 +10,10 @@ let screenContent = document.getElementById('screenContent');
 let buttons = document.getElementsByClassName('number');
 let operators = document.getElementsByClassName('operator');
 let clearEntry = document.querySelector('.clearentry');
+let all_clear = document.querySelector('.allclear');
 let equal = document.querySelector('.equals');
 let decimalPoint = document.querySelector('.decimal');
-
+let back_Space = document.querySelector('.backspace');
 let num1;
 let result;
 let result2;
@@ -99,6 +100,20 @@ function clearE() {
  });
 }
 
+function allClear() {
+  all_clear.addEventListener('click', function () {
+    result = '';
+    num1 = '';
+    screenContent.innerHTML = '0';
+  });
+}
+
+function backSpace () {
+  back_Space.addEventListener('click', function () {
+    screenContent.innerHTML = screenContent.innerHTML.slice(0, -1);
+  });
+}
+
 let operate = function () {
     for(let i= 0; i < operators.length; i++) {
       operators[i].addEventListener('click', function(){
@@ -180,6 +195,8 @@ function equals () {
 }
 equals();
 clearE();
+allClear();
+backSpace();
 showNumbersOnScreen();
 operate();
 addDecimalPoint();

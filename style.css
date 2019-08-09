@@ -54,7 +54,7 @@ p {
   font-size: 2em;
 }
 
-.squareroot {
+.backspace {
   background-color: black;
   color: white;
   border-radius: 15px;
@@ -86,7 +86,7 @@ p {
 
 .equals {
   background-color: black;
-  color: rgb(27, 163, 34);
+  color: white;
   border-radius: 15px;
   font-size: 2em;
   font-weight: bolder;
