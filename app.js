@@ -76,21 +76,34 @@ function divide (result, num1) {
   } else {
     screenContent.innerHTML = 'ERROR'
   }  
+  if(String(result2).length > 10) {
+    screenContent.innerHTML = result2.toFixed(5);
+  }
+  
 }
 
 function subtract (result, num1) {
   result2 = Number(result) - Number(num1);
   screenContent.innerHTML = result2;  
+  if (String(result2).length > 10) {
+    screenContent.innerHTML = result2.toFixed(5);
+  }
 }
 
 function multiply (result, num1) {
   result2 = Number(result) * Number(num1);
   screenContent.innerHTML = result2;
+  if (String(result2).length > 10) {
+    screenContent.innerHTML = result2.toFixed(5);
+  }
 }
 
 function sum (result, num1) {
   result2 = Number(result) + Number(num1);
   screenContent.innerHTML = result2;
+  if (String(result2).length > 10) {
+    screenContent.innerHTML = result2.toFixed(5);
+  }
 }
 
 function clearE() {
