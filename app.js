@@ -111,6 +111,7 @@ function allClear() {
 function backSpace () {
   back_Space.addEventListener('click', function () {
     screenContent.innerHTML = screenContent.innerHTML.slice(0, -1);
+    num1 = screenContent.innerHTML;
   });
 }
 
