@@ -9,10 +9,10 @@ Bugs to correct:
 Features to add :
 
 1. Keyboard support.
-2. Backspace button.
-3. Restrict division by zero.
+2. Backspace button.(Added)
+3. Restrict division by zero.(Added)
 4. Abilitie to work with negative numbers.
-5. Responsiveness.
+5. Responsiveness.(partially added[now margins don't chnage when zooming in or out])
 
 Corrected bugs:
 
