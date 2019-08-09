@@ -24,12 +24,11 @@ function showNumbersOnScreen() {
     buttons[i].addEventListener('click', function () {
       if (screenContent.innerHTML === '0') {
         screenContent.innerHTML = buttons[i].innerHTML;
-        
-        
+
 
       } else {
         screenContent.innerHTML += buttons[i].innerHTML;
-        storeNumbers()
+        storeNumbers();
         restrictNumbersOnScreen();
       }
       if (!num1) {
