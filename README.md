@@ -20,7 +20,7 @@ Calculator working as expected.
 
 # Corrected bugs:
 
-1. When you press an operator button twice, this makes the calculator behaves in a non expected manner.
+1. When you press an operator button twice, this makes the calculator behave in a non expected manner.
 2. Excesive amount of decimal numbers shown on screen that overboarded the calculator screen.
 
 
